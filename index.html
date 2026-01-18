@@ -3,195 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شاورما الضيعة - شعفاط</title>
+<title>شاورما الضيعة - المنيو الكامل</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fffdf8; color:#333; }
-header { background:#e64a19; color:white; padding:20px; text-align:center; }
-nav { background:#f4511e; display:flex; justify-content:center; flex-wrap:wrap; }
-nav a { color:white; text-decoration:none; padding:10px 20px; font-weight:bold; margin:2px; }
-nav a:hover { background:#ff7043; }
-section { padding:40px 20px; max-width:1200px; margin:auto; }
-section h2 { color:#e64a19; text-align:center; margin-bottom:30px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
-.item { background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.15); overflow:hidden; text-align:center; }
-.item img { width:100%; height:140px; object-fit:cover; }
-.item h3 { margin:10px 0; font-size:17px; }
-.item p { margin:0 0 10px; font-size:15px; color:#555; }
-.item button { background:#e64a19; color:white; border:none; padding:8px 12px; margin-bottom:10px; border-radius:5px; cursor:pointer; }
-.item button:hover { background:#f4511e; }
-.cart { position:fixed; top:80px; right:20px; background:white; border:1px solid #ddd; padding:15px; width:280px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); max-height:70vh; overflow:auto; z-index:999; }
-.cart h3 { margin-top:0; color:#e64a19; }
-.cart-item { display:flex; justify-content:space-between; margin-bottom:10px; font-size:14px; }
-.cart button { width:100%; margin-top:10px; padding:10px; background:#25D366; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; }
-.cart button:hover { background:#1ebe57; }
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; direction: rtl;}
+header { background:#d71a28; color:white; padding:20px; text-align:center; font-size:2em; }
+section { padding:20px; }
+h2 { color:#d71a28; margin-bottom:15px; }
+.grid { display:flex; flex-wrap:wrap; gap:15px; }
+.item { background:white; padding:10px; border-radius:8px; width:200px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.item img { width:100%; border-radius:8px; height:150px; object-fit:cover;}
+.item h3 { margin:10px 0 5px; font-size:1em;}
+.item p { margin:5px 0; font-weight:bold; color:#d71a28;}
+.item button { background:#d71a28; color:white; border:none; padding:8px 12px; border-radius:5px; cursor:pointer;}
+.item button:hover { background:#a51520; }
+#cart { position:fixed; top:20px; right:20px; background:white; padding:15px; border-radius:10px; width:250px; box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+#cart h3 { margin-top:0; }
+#cart ul { list-style:none; padding:0; max-height:300px; overflow:auto; }
+#cart ul li { margin-bottom:8px; }
+#cart p { margin:5px 0; font-weight:bold; }
+#cart button { background:#4CAF50; color:white; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; width:100%; }
+#cart button:hover { background:#3e8e41; }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>شاورما الضيعة - شعفاط</h1>
-</header>
+<header>شاورما الضيعة - المنيو الكامل</header>
 
-<nav>
-    <a href="#wraps">الـ Wraps</a>
-    <a href="#plates">Plates / Meals</a>
-    <a href="#crispy">Crispy & Chicken</a>
-    <a href="#sides">Sides / Salads / Sauces</a>
-    <a href="#contact">اتصل بنا</a>
-</nav>
-
-<!-- Section: Wraps / Shawarma -->
+<!-- Wraps / Shawarma -->
 <section id="wraps">
-    <h2>الـ Wraps</h2>
-    <div class="grid">
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/spicy-zinger-wrap.jpg" alt="Spicy Zinger Wrap">
-            <h3>Spicy Zinger Wrap</h3>
-            <p>₪46.25</p>
-            <button onclick="addToCart('Spicy Zinger Wrap',46.25)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/spicy-original.jpg" alt="Spicy Original">
-            <h3>Spicy Original</h3>
-            <p>₪46.25</p>
-            <button onclick="addToCart('Spicy Original',46.25)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/chicken-shawarma.jpg" alt="Chicken Shawarma">
-            <h3>Chicken Shawarma</h3>
-            <p>₪44.40</p>
-            <button onclick="addToCart('Chicken Shawarma',44.40)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/meat-shawarma.jpg" alt="Meat Shawarma">
-            <h3>Meat Shawarma</h3>
-            <p>₪46.25</p>
-            <button onclick="addToCart('Meat Shawarma',46.25)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/mix-shawarma.jpg" alt="Mix Shawarma">
-            <h3>Mix Shawarma</h3>
-            <p>₪48.10</p>
-            <button onclick="addToCart('Mix Shawarma',48.10)">أضف للعربة</button>
-        </div>
-        <!-- يمكنك إضافة بقية Wraps بنفس النمط -->
-    </div>
-</section>
-
-<!-- Section: Plates / Meals -->
-<section id="plates">
-    <h2>Plates / Meals</h2>
-    <div class="grid">
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/chicken-arabic-shawarma.jpg" alt="Chicken Arabic Shawarma">
-            <h3>Chicken Arabic Shawarma</h3>
-            <p>₪74.00</p>
-            <button onclick="addToCart('Chicken Arabic Shawarma',74.00)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/meat-arabic-shawarma.jpg" alt="Meat Arabic Shawarma">
-            <h3>Meat Arabic Shawarma</h3>
-            <p>₪74.00</p>
-            <button onclick="addToCart('Meat Arabic Shawarma',74.00)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/shawarma-plate-chicken.jpg" alt="Shawarma Plate Chicken">
-            <h3>Shawarma Plate (Chicken)</h3>
-            <p>₪81.40</p>
-            <button onclick="addToCart('Shawarma Plate (Chicken)',81.40)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/shawarma-plate-meat.jpg" alt="Shawarma Plate Meat">
-            <h3>Shawarma Plate (Meat)</h3>
-            <p>₪81.40</p>
-            <button onclick="addToCart('Shawarma Plate (Meat)',81.40)">أضف للعربة</button>
-        </div>
-        <!-- باقي ال Plates / Meals تضاف بنفس الطريقة -->
-    </div>
-</section>
-
-<!-- Section: Crispy & Chicken Pieces -->
-<section id="crispy">
-    <h2>Crispy & Chicken Pieces</h2>
-    <div class="grid">
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/crispy-tenders-3.jpg" alt="Crispy Tenders (3)">
-            <h3>Crispy Tenders (3)</h3>
-            <p>₪33.30</p>
-            <button onclick="addToCart('Crispy Tenders (3)',33.30)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/crispy-tenders-6.jpg" alt="Crispy Tenders (6)">
-            <h3>Crispy Tenders (6)</h3>
-            <p>₪55.50</p>
-            <button onclick="addToCart('Crispy Tenders (6)',55.50)">أضف للعربة</button>
-        </div>
-        <!-- باقي الأصناف تضاف بنفس النمط -->
-    </div>
-</section>
-
-<!-- Section: Sides / Salads / Sauces -->
-<section id="sides">
-    <h2>Sides / Salads / Sauces</h2>
-    <div class="grid">
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/falafel-plate.jpg" alt="Falafel Plate">
-            <h3>Falafel Plate</h3>
-            <p>₪48.10</p>
-            <button onclick="addToCart('Falafel Plate',48.10)">أضف للعربة</button>
-        </div>
-        <div class="item">
-            <img src="https://shawerma-aldayaa.com/wp-content/uploads/2025/01/hummus-s.jpg" alt="Hummus (S)">
-            <h3>Hummus (S)</h3>
-            <p>₪22.20</p>
-            <button onclick="addToCart('Hummus (S)',22.20)">أضف للعربة</button>
-        </div>
-        <!-- باقي Sides / Salads / Sauces تضاف بنفس الطريقة -->
-    </div>
-</section>
-
-<div class="cart" id="cart">
-    <h3>عربة الطلب</h3>
-    <div id="cart-items"></div>
-    <p><strong>الإجمالي: ₪<span id="total">0</span></strong></p>
-    <button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+<h2>Wraps / Shawarma</h2>
+<div class="grid">
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Spicy+Zinger+Wrap" alt="Spicy Zinger Wrap">
+    <h3>Spicy Zinger Wrap</h3>
+    <p>₪46.25</p>
+    <button onclick="addToCart('Spicy Zinger Wrap',46.25)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Spicy+Original" alt="Spicy Original">
+    <h3>Spicy Original</h3>
+    <p>₪46.25</p>
+    <button onclick="addToCart('Spicy Original',46.25)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Make+it+a+Meal" alt="Make it a Meal">
+    <h3>Make it a Meal</h3>
+    <p>₪70.30</p>
+    <button onclick="addToCart('Make it a Meal',70.30)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Chicken+Shawarma" alt="Chicken Shawarma">
+    <h3>Chicken Shawarma</h3>
+    <p>₪44.40</p>
+    <button onclick="addToCart('Chicken Shawarma',44.40)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Meat+Shawarma" alt="Meat Shawarma">
+    <h3>Meat Shawarma</h3>
+    <p>₪46.25</p>
+    <button onclick="addToCart('Meat Shawarma',46.25)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Mix+Shawarma" alt="Mix Shawarma">
+    <h3>Mix Shawarma</h3>
+    <p>₪48.10</p>
+    <button onclick="addToCart('Mix Shawarma',48.10)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Falafel+Wrap" alt="Falafel Wrap">
+    <h3>Falafel Wrap</h3>
+    <p>₪33.30</p>
+    <button onclick="addToCart('Falafel Wrap',33.30)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Potato+Wrap" alt="Potato Wrap">
+    <h3>Potato Wrap</h3>
+    <p>₪33.30</p>
+    <button onclick="addToCart('Potato Wrap',33.30)">أضف للعربة</button>
+  </div>
 </div>
-
-<section id="contact">
-    <h2>📲 للحجز والتوصيل عبر واتساب</h2>
-    <p>📞 025385387</p>
 </section>
+
+<!-- Plates / Meals -->
+<section id="plates">
+<h2>Plates / Meals</h2>
+<div class="grid">
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Chicken+Arabic+Shawarma" alt="Chicken Arabic Shawarma">
+    <h3>Chicken Arabic Shawarma</h3>
+    <p>₪74.00</p>
+    <button onclick="addToCart('Chicken Arabic Shawarma',74.00)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Meat+Arabic+Shawarma" alt="Meat Arabic Shawarma">
+    <h3>Meat Arabic Shawarma</h3>
+    <p>₪74.00</p>
+    <button onclick="addToCart('Meat Arabic Shawarma',74.00)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Arabic+Shawarma+Double" alt="Arabic Shawarma Double">
+    <h3>Arabic Shawarma Double</h3>
+    <p>₪140.60</p>
+    <button onclick="addToCart('Arabic Shawarma Double',140.60)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Shawarma+Plate+Chicken" alt="Shawarma Plate Chicken">
+    <h3>Shawarma Plate (Chicken)</h3>
+    <p>₪81.40</p>
+    <button onclick="addToCart('Shawarma Plate (Chicken)',81.40)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Shawarma+Plate+Meat" alt="Shawarma Plate Meat">
+    <h3>Shawarma Plate (Meat)</h3>
+    <p>₪81.40</p>
+    <button onclick="addToCart('Shawarma Plate (Meat)',81.40)">أضف للعربة</button>
+  </div>
+</div>
+</section>
+
+<!-- Crispy & Chicken -->
+<section id="crispy">
+<h2>Crispy & Chicken</h2>
+<div class="grid">
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Lunch+Box" alt="Lunch Box">
+    <h3>Lunch Box</h3>
+    <p>₪62.90</p>
+    <button onclick="addToCart('Lunch Box',62.90)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Dinner+Box" alt="Dinner Box">
+    <h3>Dinner Box</h3>
+    <p>₪70.30</p>
+    <button onclick="addToCart('Dinner Box',70.30)">أضف للعربة</button>
+  </div>
+</div>
+</section>
+
+<!-- Sides / Salads / Sauces -->
+<section id="sides">
+<h2>Sides / Salads / Sauces</h2>
+<div class="grid">
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Falafel+Plate" alt="Falafel Plate">
+    <h3>Falafel Plate</h3>
+    <p>₪48.10</p>
+    <button onclick="addToCart('Falafel Plate',48.10)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Deep+Fried+Veggie" alt="Deep Fried Veggie Plate">
+    <h3>Deep Fried Veggie Plate</h3>
+    <p>₪81.40</p>
+    <button onclick="addToCart('Deep Fried Veggie Plate',81.40)">أضف للعربة</button>
+  </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150.png?text=Hummus+S" alt="Hummus S">
+    <h3>Hummus (S)</h3>
+    <p>₪22.20</p>
+    <button onclick="addToCart('Hummus (S)',22.20)">أضف للعربة</button>
+  </div>
+</div>
+</section>
+
+<div id="cart">
+<h3>عربة الطلب</h3>
+<ul id="cart-items"></ul>
+<p id="total">الإجمالي: ₪0</p>
+<button onclick="sendWhatsApp()">إرسال على واتساب</button>
+</div>
 
 <script>
 let cart = [];
-function addToCart(name, price){
-    let item = cart.find(i=>i.name===name);
-    if(item){ item.qty++; } else { cart.push({name:name, price:price, qty:1}); }
-    updateCart();
+function addToCart(name, price) {
+  const item = cart.find(i => i.name === name);
+  if(item){ item.qty++; }
+  else { cart.push({name, price, qty:1}); }
+  renderCart();
 }
-
-function updateCart(){
-    let cartDiv = document.getElementById('cart-items');
-    cartDiv.innerHTML = '';
-    let total = 0;
-    cart.forEach(item=>{
-        total += item.price*item.qty;
-        let div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `<span>${item.name} x${item.qty}</span><span>₪${(item.price*item.qty).toFixed(2)}</span>`;
-        cartDiv.appendChild(div);
-    });
-    document.getElementById('total').innerText = total.toFixed(2);
+function renderCart() {
+  const list = document.getElementById('cart-items');
+  list.innerHTML = '';
+  let total = 0;
+  cart.forEach(i=>{
+    list.innerHTML += `<li>${i.name} x${i.qty} - ₪${(i.price*i.qty).toFixed(2)}</li>`;
+    total += i.price*i.qty;
+  });
+  document.getElementById('total').innerText = 'الإجمالي: ₪'+total.toFixed(2);
 }
-
-function sendOrder(){
-    if(cart.length===0){ alert('العربة فارغة!'); return; }
-    let message = 'طلب جديد من موقع شاورما الضيعة:%0A';
-    cart.forEach(item=>{ message += `${item.name} x${item.qty} = ₪${(item.price*item.qty).toFixed(2)}%0A`; });
-    message += `الإجمالي: ₪${cart.reduce((sum,i)=>sum+i.price*i.qty,0).toFixed(2)}`;
-    let phone = '97225385387'; // رقم واتساب بدون +
-    let url = `https://wa.me/${phone}?text=${message}`;
-    window.open(url, '_blank');
+function sendWhatsApp() {
+  if(cart.length===0){ alert('لا توجد أصناف بالعربة'); return; }
+  let text = 'طلب شاورما الضيعة:%0A';
+  cart.forEach(i=>{
+    text += `${i.name} x${i.qty} - ₪${(i.price*i.qty).toFixed(2)}%0A`;
+  });
+  let total = cart.reduce((a,b)=>a+b.price*b.qty,0);
+  text += `الإجمالي: ₪${total.toFixed(2)}`;
+  let phone = '972501234567'; // ضع رقم واتساب المطعم هنا
+  window.open(`https://wa.me/${phone}?text=${text}`,'_blank');
 }
 </script>
 
